@@ -1,0 +1,123 @@
+<div layout="column" layout-fill style="padding-bottom: 32px;">
+	<!-- <div layout="row">
+		<div layout="flex">
+			<h3>Side Template</h3>
+		</div>
+		<div>
+			<h2>My Courses</h2>
+		</div>
+		<div>
+			<h3>Revenue List</h3>
+		</div>
+	</div> -->
+	<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+	    <md-toolbar class="md-theme-light" style="min-height:40px;height:40px;">
+        	<h6 class="md-toolbar-tools">Options</h6>
+      	</md-toolbar>
+	    <md-content flex layout-margin=2 layout-padding>
+	    
+	     <md-list>
+	        <md-list-item class="md-3-line">
+        		<md-card>
+        		   <div style="width:200px;height:50px;padding-left:10px;padding-top:10px;">
+        			<strong>Latest</strong>
+        		   </div>
+        		</md-card>
+        	</md-list-item>
+
+      		<md-list-item class="md-3-line">
+        		<md-card>
+        		   <div style="width:200px;height:50px;padding-left:10px;padding-top:10px;">
+        			<strong>Featured</strong>
+        		   </div>
+        		</md-card>
+        	</md-list-item>
+
+        	<md-list-item class="md-3-line">
+        		<md-card>
+        		   <div style="width:200px;height:50px;padding-left:10px;padding-top:10px;">
+        			<strong>Top Rated</strong>
+        		   </div>
+        		</md-card>
+        	</md-list-item>
+
+        	<md-list-item class="md-3-line">
+        		<md-card>
+        		   <div style="width:200px;height:50px;padding-left:10px;padding-top:10px;">
+        			<strong>Top Viewed</strong>
+        		   </div>
+        		</md-card>
+        	</md-list-item>
+
+	    </md-list> 
+	   
+      </md-content>
+    </md-sidenav>
+   
+   <div layout="column">
+   <div>
+    <md-content class="md-padding">
+    <form ng-submit="$event.preventDefault()">
+      <md-autocomplete ng-disabled="isDisabled" md-no-cache="noCache" md-selected-item="selectedItem" md-search-text="searchText" md-selected-item-change="selectedItemChange(item)" md-items="item in querySearch(searchText)" md-item-text="item.display" md-min-length="0" placeholder="Search title">
+        <md-item-template>
+          <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.display}}</span>
+        </md-item-template>
+        <md-not-found>
+          No matches found for "{{searchText}}".
+        </md-not-found>
+      </md-autocomplete>
+      <br>
+    </form>
+  </md-content>
+  </div>
+
+	<div layout="row" layout-margin=2 style="width:100%">
+		<md-content>
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="item in contents | filter:searchText">
+       <div layout="column" layout-fill style="padding-bottom: 32px;">
+       <md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
+        <div layout="column">
+        <md-card>
+        <img ng-src="{{item.imageUrl}}" class="md-avatar" alt="{{item.title}}">
+        </md-card>
+          
+        </div>
+        <div flex style="margin-left:20px;margin-right:20px;" layout-align="center center">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          <p>
+            <md-chips ng-model="item.tags" readonly="true">
+              <md-chip-template>
+                {{$chip}} 
+              </md-chip-template>
+            </md-chips>
+          </p>
+        </div>
+        <div layout="column">
+          <md-card>
+            <div style="width:200px;height:40px;padding-left:10px;padding-top:10px;"><strong>{{item.category}}</strong></div>
+          </md-card>
+          <md-card>
+            <div style="width:200px;height:40px;padding-left:10px;padding-top:10px;">{{item.level}}</div>
+          </md-card>
+          
+            <md-card>
+              <md-list-item>
+    <img alt="{{ item.instructor.name }}" ng-src="{{ item.instructor.imageUrl }}" class="md-avatar" />
+    <p>{{ item.instructor.name }}</p>
+  </md-list-item>
+
+            </md-card>
+        </div>
+        </md-whiteframe>
+       </div>
+      </md-list-item>
+      
+    </md-list>
+  </md-content>
+
+ </div>
+ 
+ </div> 
+</div>

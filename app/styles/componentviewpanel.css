@@ -1,0 +1,34 @@
+.componentviewpanel {
+
+}
+
+.componentviewpanel .card-media {
+  background-color: #999999; }
+  
+.componentviewpanel .material-icons.md-18 { font-size: 18px; }
+.componentviewpanel .material-icons.md-24 { font-size: 24px; }
+.componentviewpanel .material-icons.md-36 { font-size: 36px; }
+.componentviewpanel .material-icons.md-48 { font-size: 48px; }
+.componentviewpanel .material-icons.md-60 { font-size: 60px; }
+
+/* Rules for using icons as black on a light background. */
+.componentviewpanel .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.componentviewpanel .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.componentviewpanel .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.componentviewpanel .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.componentviewpanel .material-icons.orange600 { color: #FB8C00; }
+.componentviewpanel .material-icons.green500 { color: #4CAF50; }
+.componentviewpanel .material-icons.red500 { color: #F44336; }
+.componentviewpanel .material-icons.gray300 { color: #546E7A; }
+.componentviewpanel .material-icons.indigo50 { color: #E8EAF6; }
+
+.componentviewpanel .icon-text {display: inline-flex; vertical-align: middle !important;}
+.componentviewpanel .icon-text.md-60 {font-size: 24px;}
+
+componentviewpanel .dashed {
+    stroke-dasharray: 5,5;
+}
+  

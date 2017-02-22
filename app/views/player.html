@@ -1,0 +1,45 @@
+<div class="player" layout="column" layout-fill>
+	
+    <div layout="row">
+     
+      <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" style="min-width:280px;width:280px;">
+	    <md-toolbar class="md-theme-light" style="min-height:40px;height:40px;">
+        	<h2 class="md-toolbar-tools">Learning Path</h2>
+      	</md-toolbar>
+	    <md-content flex layout-padding>
+	  
+        <j-learning-plan data=data></j-learning-plan>
+
+      </md-content>
+    </md-sidenav>
+    
+    <div layout="column" style="padding-left:5px;padding-right:5px;">
+    <md-toolbar class="md-theme-light" style="min-height:40px;height:40px;">
+          <h2 class="md-toolbar-tools">{{Player.currentItemName}}</h2>
+          <!-- <span>{{Player.currentItemType}}</span> -->
+        </md-toolbar>
+	       <j-content-viewer></j-content-viewer>
+    </div>
+	   <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" style="min-width:200px;width:200px;">
+	    <md-toolbar class="md-theme-light" style="min-height:40px;height:40px;">
+        	<h2 class="md-toolbar-tools">Playlist</h2>
+      	</md-toolbar>
+	    <md-content flex layout-padding>
+	    
+	     <md-list>
+      		<md-list-item ng-repeat="item in Player.itemLists[Player.currentItemList].items" style="width:100%;height:35px;background-color:#eee;margin:5px;">
+
+        		<a ng-click="Player.setItem($index)"><div ><img ng-src="images/icon_{{item.type}}.svg" style="width:24px;height:24px;padding-right:10px;">{{item.name}}</div></a> 
+        		<!-- <div class="md-list-item-text" style="margin-left:10px;">
+			        <h3>Pale Blue Dot</h3>
+			        <h4>Author</h4>
+			        <h5>images/icon_{{item.type}}.svg</h5>
+        		</div> -->
+        	</md-list-item>
+	    </md-list> 
+	  
+      </md-content>
+
+    </md-sidenav>
+    </div>
+</div>

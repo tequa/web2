@@ -1,0 +1,62 @@
+.dashboard {
+
+}
+
+
+.dashboard md-content.md-default-theme {
+  background-color: #eee;
+}
+
+.dashboard .panel-widget {
+  background-color: white;
+
+  &-toolbar {
+    box-shadow: none;
+  }
+
+  &-tittle {
+    color: #7A7A7A;
+  }
+}
+
+.dashboard .fixed-height-widget {
+  height: 180px;
+}
+
+.dashboard .nvd3.nv-pie .nv-pie-title {
+  fill: rgb(68, 68, 68);
+  font-weight: $font-weight-bold;
+  font-size: $font-size-large !important;
+}
+
+.dashboard md-card {
+  background-color: #fff;
+  h2:first-of-type {
+    margin-top: 0;
+  }
+}
+.dashboard md-toolbar {
+  .md-button.md-default-theme {
+    border-radius: 99%; /*// round toolbar buttons*/
+  }
+}
+.dashboard h2 {
+  font-weight: 400;
+}
+.dashboard .md-toolbar-tools-bottom {
+  font-size: small;
+  & :last-child {
+    opacity: 0.8;
+  }
+}
+.dashboard md-toolbar:not(.md-hue-1),
+.md-fab {
+  fill: #fff;
+}
+.dashboard md-sidenav {
+  fill: #737373;
+  ng-md-icon {
+    position: relative;
+    top: 5px; /*// adjust for svg viewbox*/
+  }
+}

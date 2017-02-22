@@ -1,0 +1,69 @@
+<div ng-controller="ComponentViewCtrl" ng-cloak="" class="componentviewpanel" layout="column" flex="400" ng-init="Hvb.toggleSelectedItem(item)">
+  <!--  <md-content class="md-padding" layout-xs="column" layout="row"> -->
+   <!--  <div  layout="column"> -->
+   
+      <md-card>
+        <md-card-title layout="row" layout-align="start start">
+
+    <!-- <md-button md-no-ink class="md-icon-button md-fab md-mini md-primary" aria-label="Settings" ng-click="toggleViewMode()">
+     <i class="material-icons md-24 indigo50" aria-hidden="true">{{viewModeIcon}}</i></md-button> -->
+          <md-card-title-text layout-align="start start">
+            <span class="md-title">{{title}}</span>
+           <!--  <span class="subheading">{{viewMode}}</span> -->
+
+          </md-card-title-text>
+          <div layout="row" layout-align="end start">
+
+              <i class="material-icons md-36 red500">arrow_downward</i>
+            <span class="icon-text md-60"> 30% </span>
+          </div>
+        </md-card-title>
+        
+        <md-card-content layout="row">
+          
+            <div layout="row"  layout-wrap layout-padding ng-cloak ng-show="viewMode == 'chart'">
+  		    <!-- <md-whiteframe class="md-whiteframe-1dp" layout layout-align="start center">  -->
+  		    <!--  style="width:100% !important; overflow-x:auto ;overflow-y: hidden;" -->
+  				<nvd3 options="Hvb.itemdata['chartOptions']" data="Hvb.itemdata['chartData']"></nvd3>
+  				
+            </div>
+
+          
+          <div layout="row"  layout-wrap layout-padding ng-cloak ng-if="viewMode == 'table'">
+  <md-whiteframe class="md-whiteframe-1dp" layout layout-align="start center">
+         <md-table-container>
+          <table md-table ng-model="items">
+            <thead md-head >
+              <tr md-row>
+                <th md-column md-order-by="name"><span>Name</span></th>
+                <th md-column md-numeric md-order-by="item.score" md-desc><span>Score</span></th>
+                <th md-column md-numeric md-order-by="item.weight"><span>Weight</span></th>
+              </tr>
+            </thead>
+            <tbody md-body>
+              <tr md-row ng-repeat="item in items">
+                <td md-cell>{{item.name}}</td>
+                <td md-cell>{{item.score}}
+
+                </td>
+                <td md-cell>{{item.weight}}</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </md-table-container>
+           
+    </md-whiteframe>
+          </div> 
+          
+</md-card-content> 
+      
+      </md-card>
+      
+      
+    
+    </div>
+    
+
+    <!-- </div> -->
+  <!-- </md-content> -->

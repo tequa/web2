@@ -1,0 +1,23 @@
+<div ng-init="Hvb.toggleSelectedItem('Default')">
+       <div><span>{{Hvb.selectedItem}}</span></div>
+       
+	   <div layout-gt-md="row">
+		  
+		  <!-- <panel-widget flex title="Financial Impact" template="partials/courses.html" class="fixed-height-widget"></panel-widget> -->
+		  <component-view-panel title="{{Hvb.selectedItem}}" item="{{Hvb.selectedItem}}"></component-view-panel>
+		  
+		 <!--  <panel-widget flex title="Revenue" template="partials/revenues.html" class="fixed-height-widget"></panel-widget> -->
+	   </div>
+		  
+	   <div layout-gt-md="row">
+	      <div ng-repeat="domain in Hvb.domains">
+	        <a>
+			<component-panel title="{{domain}}" data="8.9" ng-click="Hvb.toggleSelectedItem(domain)"></component-panel>
+			</a>
+		 </div>
+		 
+	   </div>
+	   
+	   
+	   
+</div>

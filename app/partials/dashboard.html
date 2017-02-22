@@ -1,0 +1,75 @@
+<div>
+	 
+      <div layout="column" ng-if="Hvb.selectedPage == 'Dashboard'">
+	      <div layout-gt-md="row" >
+			  <!-- <panel-widget flex title="Financial Impact" template="partials/courses.html" class="fixed-height-widget"></panel-widget> -->
+			  <component-view-panel title="Total Performance Score" item="tps" view-mode="chart"></component-view-panel>
+			  <component-view-panel title="Financial Impact" item="finimpact" view-mode="chart"></component-view-panel>
+			 <!--  <panel-widget flex title="Revenue" template="partials/revenues.html" class="fixed-height-widget"></panel-widget> -->
+		   </div>
+		   <md-toolbar>
+		    <div class="md-toolbar-tools">
+		      <h3>
+		        <span>Data Views</span>
+		      </h3>
+		    </div>
+		  </md-toolbar>
+		   <div layout-gt-md="row" >
+			  <!-- <panel-widget flex title="Financial Impact" template="partials/courses.html" class="fixed-height-widget"></panel-widget> -->
+			  <component-view-panel title="Total Performance Score" item="tps" view-mode="table"></component-view-panel>
+			  <component-view-panel title="Financial Impact" item="finimpact" view-mode="table"></component-view-panel>
+			 <!--  <panel-widget flex title="Revenue" template="partials/revenues.html" class="fixed-height-widget"></panel-widget> -->
+		   </div>
+		   
+	   </div>
+	   
+	   <div layout="column" ng-if="Hvb.selectedPage != 'Dashboard'">
+		   <div layout-gt-md="row" >
+			  
+			  <!-- <panel-widget flex title="Financial Impact" template="partials/courses.html" class="fixed-height-widget"></panel-widget> -->
+			  <component-view-panel title="{{Hvb.selectedItem}}" item="{{Hvb.selectedItem}}" view-mode="chart"></component-view-panel>
+			  
+			 <!--  <panel-widget flex title="Revenue" template="partials/revenues.html" class="fixed-height-widget"></panel-widget> -->
+		   </div>
+		   <md-toolbar>
+		    <div class="md-toolbar-tools">
+		      <h3>
+		        <span>Data Views</span>
+		      </h3>
+		    </div>
+		  </md-toolbar>
+		   <div layout-gt-md="row" >
+			  
+			  <!-- <panel-widget flex title="Financial Impact" template="partials/courses.html" class="fixed-height-widget"></panel-widget> -->
+			  <component-view-panel title="{{Hvb.selectedItem}}" item="{{Hvb.selectedItem}}" view-mode="table"></component-view-panel>
+			  
+			 <!--  <panel-widget flex title="Revenue" template="partials/revenues.html" class="fixed-height-widget"></panel-widget> -->
+		   </div>
+	   </div>
+	   
+	    <md-toolbar>
+	    <div class="md-toolbar-tools">
+	      <h3>
+	        <span>All Domains</span>
+	      </h3>
+	    </div>
+	  </md-toolbar>
+	   <div layout-gt-md="row">
+	      <div ng-repeat="domain in Hvb.domains">
+	        <a>
+			<component-panel title="{{domain}}" data="8.9" ng-click="Hvb.toggleSelectedItem(domain)"></component-panel>
+			</a>
+		 </div>
+		 
+	   </div>
+	  
+	  <!--  <div layout-gt-md="row">
+		  <!-- <panel-widget flex title="Financial Impact" template="partials/courses.html" class="fixed-height-widget"></panel-widget> 
+		  <component-panel title="Outcome" data="8.9"></component-panel>
+		  <component-panel title="Survey" data="0.0"></component-panel>
+		  <component-panel title="Clinical" data="0.0"></component-panel>
+		  <component-panel title="Efficiency" data="0.0"></component-panel>
+		 <!--  <panel-widget flex title="Revenue" template="partials/revenues.html" class="fixed-height-widget"></panel-widget> 
+	   </div> -->
+	   
+</div>

@@ -1,0 +1,49 @@
+<!-- <canvas id="pdf" ></canvas> -->
+<!-- getNavStyle(scroll) -->
+<div class="page-container">
+
+  {{loading}}
+  <div class="page" >
+    <canvas id="pdf-canvas" class="pdf-canvas"></canvas>
+  </div>
+<!-- <hr> -->
+  <div layout="row" style="background-color:rgba(194,208,206,1);padding-bottom:10px;box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.25);">
+    <nav ng-class="{'pdf-controls fixed': scroll > 100, 'pdf-controls': scroll <= 100}">
+       <section style="width:100%;">
+        <md-button class="md-icon-button" aria-label="Previous" style="width:24px;height:24px;" ng-click="goPrevious()">
+          <md-tooltip>Previous</md-tooltip>
+          <md-icon class="svg-icon" md-svg-icon="images/nav_previous.svg" ></md-icon>
+        </md-button>
+         <md-button class="md-icon-button" aria-label="Next" style="width:24px;height:24px;" ng-click="goNext()">
+          <md-tooltip>Next</md-tooltip>
+          <md-icon class="svg-icon" md-svg-icon="images/nav_next.svg" ></md-icon>
+        </md-button>
+
+        <md-button class="md-icon-button" aria-label="Zoom In" style="width:24px;height:24px;" ng-click="zoomIn()">
+          <md-tooltip>Zoom In</md-tooltip>
+          <md-icon class="svg-icon" md-svg-icon="images/zoom_in.svg" ></md-icon>
+        </md-button>
+         <md-button class="md-icon-button" aria-label="Zoom Out" style="width:24px;height:24px;" ng-click="zoomOut()">
+          <md-tooltip>Zoom Out</md-tooltip>
+          <md-icon class="svg-icon" md-svg-icon="images/zoom_out.svg" ></md-icon>
+        </md-button>
+
+        <md-button class="md-icon-button" aria-label="Rotate" style="width:24px;height:24px;" ng-click="rotate()">
+          <md-tooltip>Rotate</md-tooltip>
+          <md-icon class="svg-icon" md-svg-icon="images/rotate_90.svg" ></md-icon>
+        </md-button>
+
+        <span>Page:
+        <input type="text" maxlength="5" ng-model="pageNum" style="width:30px;">
+        / {{pageCount}}</span>
+
+        <span flex>&nbsp;</span>
+       
+        <span class="text-right">{{pdfUrl}}</span>
+        </section>
+      </nav>
+
+     
+  </div>
+ 
+</div>
